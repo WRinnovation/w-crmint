@@ -22,7 +22,7 @@ if [ ! -d $HOME/w-crmint ]; then
   git clone https://github.com/WRinnovation/w-crmint.git $HOME/w-crmint
   echo "\\nCloned w-crmint repository to your home directory: $HOME."
 fi
-cd $HOME/crmint
+cd $HOME/w-crmint
 
 # Updates the targeted branch.
 git checkout $TARGET_BRANCH
