@@ -23,5 +23,5 @@ else:
   client = Client()
 
 
-logger_name = 'crmintapplogger'
+logger_name = 'crmintapp-sqllogger'
 logger = client.logger(logger_name)

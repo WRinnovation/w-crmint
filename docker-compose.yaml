@@ -21,9 +21,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
-      MYSQL_DATABASE: crmintapp
-      MYSQL_USER: crmintapp
-      MYSQL_PASSWORD: crmintapp
+      MYSQL_DATABASE: crmintapp-sql
+      MYSQL_USER: crmintapp-sql
+      MYSQL_PASSWORD: crmintapp-sql
     volumes:
       - db_data:/var/lib/mysql
 
@@ -36,7 +36,7 @@ services:
       - "8080:8080"
       - "8081:8081"
     environment:
-      DATABASE_URI: mysql+mysqldb://crmintapp:crmintapp@db:3306/crmintapp
+      DATABASE_URI: mysql+mysqldb://crmintapp-sql:crmintapp-sql@db:3306/crmintapp-sql
       APPLICATION_ID: $APPLICATION_ID
     volumes:
       - ./backends/core:/app/backends/core
@@ -56,12 +56,12 @@ services:
       context: .
       dockerfile: docker/backends/Dockerfile
     environment:
-      DATABASE_URI: mysql+mysqldb://crmintapp:crmintapp@db:3306/crmintapp
+      DATABASE_URI: mysql+mysqldb://crmintapp-sql:crmintapp-sql@db:3306/crmintapp-sql
     command: >
       bash -c "export PYTHONPATH="/root/google-cloud-sdk/platform/google_appengine:lib" &&
                export FLASK_APP=run_ibackend.py &&
                export FLASK_DEBUG=1 &&
-               export APPLICATION_ID=crmintapp &&
+               export APPLICATION_ID=crmintapp-sql &&
                cd /app/backends &&
                python -m flask db upgrade"
     depends_on:
@@ -72,12 +72,12 @@ services:
       context: .
       dockerfile: docker/backends/Dockerfile
     environment:
-      DATABASE_URI: mysql+mysqldb://crmintapp:crmintapp@db:3306/crmintapp
+      DATABASE_URI: mysql+mysqldb://crmintapp-sql:crmintapp-sql@db:3306/crmintapp-sql
     command: >
       bash -c "export PYTHONPATH="/root/google-cloud-sdk/platform/google_appengine:lib" &&
                export FLASK_APP=run_ibackend.py &&
                export FLASK_DEBUG=1 &&
-               export APPLICATION_ID=crmintapp &&
+               export APPLICATION_ID=crmintapp-sql &&
                cd /app/backends &&
                python -m flask db-seeds"
     depends_on:

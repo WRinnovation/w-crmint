@@ -25,7 +25,7 @@ spec_version = "v2.0"
 service_account_file = ""
 
 # Specify Project ID in Google Cloud
-# Example: "crmintapp-<customer>"
+# Example: "crmintapp-sql-<customer>"
 project_id_gae = ""
 
 # Specify Region. Use `gcloud app regions list` to list available regions.
@@ -41,7 +41,7 @@ project_sql_tier = ""
 workdir = "/tmp/{}".format(project_id_gae)
 
 # Specify database name
-# Example: "crmintapp_<customer>""
+# Example: "crmintapp-sql_<customer>""
 db_name = ""
 
 # Specify username for access to specified database
@@ -51,14 +51,14 @@ db_username = ""
 db_password = ""
 
 # Specify database instance name
-# Example: "crmintapp-<customer>-db"
+# Example: "crmintapp-sql-<customer>-db"
 db_instance_name = ""
 
 # Specify database instance connection name
 db_instance_conn_name = "{}:{}:{}".format(project_id_gae, project_region, db_instance_name)
 
 # Specify sender email for notifications
-# Example: "noreply@crmintapp-<customer>.appspotmail.com"
+# Example: "noreply@crmintapp-sql-<customer>.appspotmail.com"
 notification_sender_email = ""
 
 # Specify title name for application

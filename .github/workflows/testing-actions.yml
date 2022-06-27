@@ -20,8 +20,8 @@ jobs:
       # Starting the mysql service
       - run: sudo /etc/init.d/mysql start
       # Create a user with access to the test database
-      - run: mysql -u root -proot --execute="CREATE DATABASE IF NOT EXISTS crmintapp_test;"
-      - run: mysql -u root -proot --execute="GRANT ALL PRIVILEGES ON crmintapp_test.* TO 'crmint'@'localhost' IDENTIFIED BY 'crmint'";
+      - run: mysql -u root -proot --execute="CREATE DATABASE IF NOT EXISTS crmintapp-sql_test;"
+      - run: mysql -u root -proot --execute="GRANT ALL PRIVILEGES ON crmintapp-sql_test.* TO 'crmint'@'localhost' IDENTIFIED BY 'crmint'";
       # Checkout repository code
       - uses: actions/checkout@v2
       # Configure python

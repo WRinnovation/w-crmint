@@ -13,6 +13,6 @@
 # limitations under the License.
 
 
-DATABASE_NAME = "crmintapp"
-DATABASE_USER = "crmintapp"
-DATABASE_PASSWORD = "crmintapp"
+DATABASE_NAME = "crmintapp-sql"
+DATABASE_USER = "crmintapp-sql"
+DATABASE_PASSWORD = "crmintapp-sql"
