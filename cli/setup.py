@@ -22,7 +22,7 @@ version = open(version_filepath, 'r').read().strip()
 
 
 setup(
-    name="crmint",
+    name="w-crmint",
     version=version,
     packages=find_packages(),
     include_package_data=True,

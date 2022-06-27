@@ -18,9 +18,9 @@ TARGET_BRANCH=$1
 CURRENT_DIR=$(pwd)
 
 # Downloads the source code.
-if [ ! -d $HOME/crmint ]; then
-  git clone https://github.com/google/crmint.git $HOME/crmint
-  echo "\\nCloned crmint repository to your home directory: $HOME."
+if [ ! -d $HOME/w-crmint ]; then
+  git clone https://github.com/google/w-crmint.git $HOME/w-crmint
+  echo "\\nCloned w-crmint repository to your home directory: $HOME."
 fi
 cd $HOME/crmint
 
@@ -42,11 +42,11 @@ cat <<EOF >>$HOME/.bashrc
 # CRMint wrapper function.
 # Automatically activates the virtualenv and makes the command
 # accessible from all directories
-function crmint {
+function w-crmint {
   CURRENT_DIR=\$(pwd)
-  cd \$HOME/crmint
+  cd \$HOME/w-crmint
   . venv/bin/activate
-  command crmint \$@ || return
+  command w-crmint \$@ || return
   deactivate
   cd "\$CURRENT_DIR"
 }

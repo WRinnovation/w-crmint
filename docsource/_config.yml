@@ -6,9 +6,9 @@ kramdown:
 markdown:
   kramdown
 
-baseurl: /crmint
+baseurl: /w-crmint
 
-githuburl: https://github.com/google/crmint/
+githuburl: https://github.com/google/w-crmint/
 
 googleanalytics: UA-127959147-1
 
